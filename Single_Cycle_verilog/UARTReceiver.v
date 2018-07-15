@@ -8,6 +8,7 @@ output[7:0] data
 );
     wire budclk;
     reg[7:0] datareg;
+	initial datareg<={8'b0};
     assign data = datareg;
     wire status;
     assign state = status;
