@@ -11,13 +11,16 @@ output[7:0] data
 	initial datareg<={8'b0};
     assign data = datareg;
     wire status;
-    assign state = status;
+    wire finish;
+    reg finish_reg;
+    always@(*) finish_reg = finish;
+    assign state = finish_reg;
     
     always @(posedge budclk)
     begin
         if(enable) datareg = {~UART_RX,datareg[7:1]};
     end
 
-    BaudGenerator baud(sysclk,enable,~UART_RX,status,budclk);
+    BaudGenerator baud(sysclk,enable,~UART_RX,finish,status,budclk);
     
 endmodule

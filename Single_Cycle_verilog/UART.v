@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
 module UART(
+input clk,
 input sysclk,
 input Uart_state_trigger,
 input UART_RX,
@@ -24,8 +25,11 @@ output[7:0] readdata
     assign recv_finish = ~recv_state;
     
     always @(posedge sysclk)
-        begin if(Uart_state_trigger == 1'b1) begin send_state_reg = 1'b0; recv_state_reg = 1'b0; end
-        else begin send_state_reg = (send_state_reg & send_finish); recv_state_reg = (recv_state_reg & ~recv_state); end
+        begin if(Uart_state_trigger == 1'b1) begin send_state_reg <= 1'b0; recv_state_reg <= 1'b0; end
+        else begin
+        if(send_finish == 1'b1) send_state_reg <= send_finish;
+        if(recv_finish == 1'b1) recv_state_reg <= recv_finish;
+            end
         end
     
     

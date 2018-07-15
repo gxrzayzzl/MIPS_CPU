@@ -36,7 +36,7 @@ output UART_TX
                 (count == 4'b1001)?1'b1:1'b1;
                 count = count + 4'b0001;
     end
-    
-    BaudGenerator baud(sysclk,enable,trigger,status,budclk);
+    wire no_use;
+    BaudGenerator baud(sysclk,enable,trigger,no_use,status,budclk);
     
 endmodule
