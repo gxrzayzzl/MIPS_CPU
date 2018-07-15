@@ -33,8 +33,7 @@ module ALU(
 	input [31:0] B,
 	input [5:0] ALUFun,
 	input sign,
-	output reg [31:0] Z,
-	output Zero
+	output reg [31:0] Z
 	);
 	
 	reg [31:0]Math,Cmp,Logic,Shift;
