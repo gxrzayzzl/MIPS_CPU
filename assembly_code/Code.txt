@@ -76,7 +76,13 @@ jal decode1
 Interruption:    lw $t1,8($t0)
 addi $t1,$zero,1
 sw $t1,8($t0)
+<<<<<<< HEAD
 sll $zero,$zero,0
 jr $ra
 Exception:    sll $zero,$zero,0
+=======
+nop
+jr $k0
+Exception:    nop
+>>>>>>> 1bccf0756448f7e3477c79959696362f75ef365c
 j Exception

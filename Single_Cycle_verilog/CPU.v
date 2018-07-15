@@ -1,4 +1,3 @@
-//abcd
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
@@ -59,7 +58,7 @@ sys_clk,reset,UART_RX,UART_TX,LED,TUBE
 	
 	initial begin IRQ<=1'b0;end
 	
-	Control control(.OpCode(Instruction[31:26]),.Funct(Instruction[5:0]),.IRQ(IRQ),.PC_31(Instruction[31]),
+	Control control(.OpCode(Instruction[31:26]),.Funct(Instruction[5:0]),.IRQ(IRQ),.PC_31(PC[31]),
 					.PCSrc(PCSrc),.RegWrite(RegWr),.RegDst(RegDst),.MemRead(MemRd),.MemWrite(MemWr),.MemtoReg(MemToReg),.ALUSrc1(ALUSrc1),.ALUSrc2(ALUSrc2),.ExtOp(ExtOp),.LuOp(LUOp),
 					.Sign(Sign),.ALUFun(ALUFun));
 	
@@ -69,7 +68,6 @@ sys_clk,reset,UART_RX,UART_TX,LED,TUBE
 	wire [31:0] Databus_A;
 	wire [31:0] Databus_B;
 	wire [31:0] Databus_C;
-	wire Zero;
 	InstructionMemory instructionmemory(.Address(PC),.Instruction(Instruction));
 	
 	assign JT=Instruction[25:0];
@@ -77,7 +75,7 @@ sys_clk,reset,UART_RX,UART_TX,LED,TUBE
 		if(~reset)
 			case(PCSrc)
 			3'b000:PC_next<={PC[31],PC[30:0]+31'h4};
-			3'b001:PC_next<=Zero?ConBA:{PC[31],PC[30:0]+31'h4};
+			3'b001:PC_next<=ALU_OUT[0]?ConBA:{PC[31],PC[30:0]+31'h4};
 			3'b010:PC_next<={PC[31:28],JT,2'h0};
 			3'b011:PC_next<=Databus_A;
 			3'b100:PC_next<=ILLOP;
@@ -111,7 +109,8 @@ sys_clk,reset,UART_RX,UART_TX,LED,TUBE
 			2'b00:AddrC<=Rt;
 			2'b01:AddrC<=Rd;
 			2'b10:AddrC<=5'd31;
-			default:AddrC<=5'b0;
+			2'b11:AddrC<=5'd26;
+			default:AddrC<=5'd0;
 		endcase
 		
 	RegisterFile regfile(.reset(reset),.clk(clk),.RegWrite(RegWr),.Read_register1(Rs),.Read_register2(Rt),.Write_register(AddrC),.Write_data(Databus_C),
@@ -127,13 +126,12 @@ sys_clk,reset,UART_RX,UART_TX,LED,TUBE
 	assign ConBA={ImmedNum[29:0],2'b00}+PC+32'd4;
 	assign ALUA=ALUSrc1?{27'b0,Shamt}:Databus_A;
 	assign ALUB=ALUSrc2?LU_OUT:Databus_B;
-	ALU alu(.A(ALUA),.B(ALUB),.ALUFun(ALUFun),.sign(Sign),.Z(ALU_OUT),.Zero(Zero));
-	wire [31:0] MemoryAdd = Databus_A+LU_OUT;
+	ALU alu(.A(ALUA),.B(ALUB),.ALUFun(ALUFun),.sign(Sign),.Z(ALU_OUT));
 	
 	wire [31:0] ReadData;
 	
 	DataMemory datamemory(.reset(reset),.sysclk(sys_clk),.clk(clk),.Uart_Rx(UART_RX),.read_enable(MemRd),
-						.write_enable(MemWr),.address(MemoryAdd),.writedata(Databus_B),.switch(switch),
+						.write_enable(MemWr),.address(ALU_OUT),.writedata(Databus_B),.switch(switch),
 						.led(LED),.tube(TUBE),.Uart_Tx(UART_TX),.readdata(ReadData),.if_continue(if_continue));
 
 	assign Databus_C=(MemToReg==2'b00)?ALU_OUT:

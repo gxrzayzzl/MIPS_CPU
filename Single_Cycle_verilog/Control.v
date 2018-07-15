@@ -40,7 +40,7 @@ module Control(OpCode, Funct, IRQ, PC_31,
 	
 	assign MemWrite=(IRQ&&~PC_31)?0:(OpCode==6'h2b)?1:0;
 
-	assign MemtoReg=(IRQ&&~PC_31)?2'b10://中断发生在什么时候？保存本条指令还是下一条？
+	assign MemtoReg=(IRQ&&~PC_31)?2'b10:
 		(OpCode==6'h23)?2'b01:
 		(OpCode==6'h03||OpCode==6'h00&&(Funct==6'h09))?2'b10:
 		(OpCode==6'h00&&(Funct==6'h00||Funct==6'h02||Funct==6'h03||Funct==6'h22||(Funct>=6'h20&&Funct<=6'h27)||Funct==6'h2a)||
