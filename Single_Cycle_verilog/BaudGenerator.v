@@ -3,6 +3,7 @@ input sysclk,
 input trigger,
 input enable,
 output status,
+output finish,
 output bud_clk
     );
     
@@ -12,11 +13,14 @@ output bud_clk
     assign bud_clk = tmp;
     reg Status;
     assign status = Status;
+    reg finish_reg;
+    assign finish = finish_reg;
     
-    initial Status = 1'b0;
+    initial begin Status = 1'b0; finish_reg = 1'b0; end
     
     always @(posedge sysclk)
     begin
+        if(finish_reg == 1'b1) finish_reg = 1'b0;
         if(Status == 1'b0 && trigger == 1'b1 && enable == 1'b1)
         begin
             Status = 1'b1;
@@ -34,7 +38,7 @@ output bud_clk
                     state = 13'b0_0000_0000_0000;
                     count = count + 5'b00001;
                 end
-            end else Status = 1'b0;
+            end else begin Status = 1'b0; finish_reg = 1'b1; end
         end
     end
       

@@ -43,9 +43,9 @@ integer i;
     else begin if(read_enable) begin
         if(Uart_state_trigger == 1'b1) Uart_state_trigger = 1'b0;
         case(address)   
-            32'h40000018 : tmp = {24'b0,UartReadData};
+            32'h40000018 : begin tmp = {24'b0,UartReadData}; Uart_state_trigger = 1'b1; end
             32'h40000010 : tmp = {24'b0,switch};
-            32'h40000020 : begin tmp = {29'b0,Uart_CON_R}; Uart_state_trigger = 1'b1; end
+            32'h40000020 : tmp = {27'b0,Uart_CON_R,Uart_CON_W};
             32'h40000008 : tmp = {29'b0,timer_CON_R,timer_CON_W};
             32'h40000004 : tmp = timer_TL;
             32'h00000400 : tmp = 32'b0;
