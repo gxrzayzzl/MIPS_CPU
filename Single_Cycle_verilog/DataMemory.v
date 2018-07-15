@@ -48,7 +48,6 @@ integer i;
             32'h40000020 : begin tmp = {29'b0,Uart_CON_R}; Uart_state_trigger = 1'b1; end
             32'h40000008 : tmp = {29'b0,timer_CON_R,timer_CON_W};
             32'h40000004 : tmp = timer_TL;
-            32'h00000400 : tmp = 32'b0;
             32'd1024 :tmp = {11'b0,21'b011111101111110111111};
             32'd1028 :tmp = {11'b0,21'b011111101111110000110};
             32'd1032 :tmp = {11'b0,21'b011111101111111011011};
