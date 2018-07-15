@@ -16,6 +16,8 @@ output UART_TX
     reg[3:0] count;
     reg finishreg;
     assign finish = finishreg;
+	
+	initial finishreg=1'b0;
     
     always @(posedge sysclk)
         if(count == 4'b1010) finishreg = 1'b1;
@@ -36,7 +38,13 @@ output UART_TX
                 (count == 4'b1001)?1'b1:1'b1;
                 count = count + 4'b0001;
     end
+<<<<<<< HEAD
     wire no_use;
     BaudGenerator baud(sysclk,enable,trigger,no_use,status,budclk);
+=======
+    
+    wire nouse;
+    BaudGenerator baud(sysclk,enable,trigger,status,nouse,budclk);
+>>>>>>> 8fe8f2a31b5fc5ac15b62efe167ce604bfba137f
     
 endmodule
