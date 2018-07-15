@@ -79,3 +79,4 @@ sw $t1,8($t0)
 sll $zero,$zero,0
 jr $ra
 Exception:    sll $zero,$zero,0
+j Exception
