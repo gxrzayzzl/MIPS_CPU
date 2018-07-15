@@ -25,7 +25,7 @@ output[7:0] data
     
     always @(posedge budclk)
     begin
-        if(enable) datareg = {~UART_RX,datareg[7:1]};
+        if(enable) datareg = {UART_RX,datareg[7:1]};
     end
 
     BaudGenerator baud(sysclk,enable,~UART_RX,status,finish,budclk);

@@ -16,6 +16,8 @@ output UART_TX
     reg[3:0] count;
     reg finishreg;
     assign finish = finishreg;
+	
+	initial finishreg=1'b0;
     
     always @(posedge sysclk)
         if(count == 4'b1010) finishreg = 1'b1;
