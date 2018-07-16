@@ -1,0 +1,324 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/CPU/Single_Cycle_verilog
+vALU
+Z1 !s110 1531715231
+!i10b 1
+!s100 0QY;[V4iAR<NQS<jVe3`S2
+I]MIi`X7I7>0h>0N_l1Ym00
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1531626150
+Z4 8ALU.v
+Z5 FALU.v
+L0 31
+Z6 OL;L;10.4;61
+r1
+!s85 0
+31
+Z7 !s108 1531715231.159000
+Z8 !s107 CPU_Single_tb.v|RegisterFile.v|InstructionMemory.v|BaudGenerator.v|CPU.v|divide.v|UARTSender.v|UART.v|DataMemory.v|ALU.v|Timer.v|Control.v|UARTReceiver.v|
+Z9 !s90 -reportprogress|300|UARTReceiver.v|Control.v|Timer.v|ALU.v|DataMemory.v|UART.v|UARTSender.v|divide.v|CPU.v|BaudGenerator.v|InstructionMemory.v|RegisterFile.v|CPU_Single_tb.v|
+!i113 0
+Z10 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+n@a@l@u
+vBaudGenerator
+R1
+!i10b 1
+!s100 :TY?D7f3UGQj^VHAkJ6_c3
+ILL_dD7N_<bSda;Pbo`6EH1
+R2
+R0
+Z11 w1531710228
+8BaudGenerator.v
+FBaudGenerator.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+n@baud@generator
+vControl
+R1
+!i10b 1
+!s100 Z2jnoRUY096cEQC31dk301
+I;[czgOb@o;0alJ6_a:N>a2
+R2
+R0
+R3
+8Control.v
+FControl.v
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+n@control
+vCPU
+R1
+!i10b 1
+!s100 X54ln[H`KBT1EbKDzKjXl3
+I4X^giAzPdV<7R0:ABF1FT3
+R2
+R0
+w1531715149
+8CPU.v
+FCPU.v
+L0 23
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+n@c@p@u
+vCPU_tb
+R1
+!i10b 1
+!s100 VEfzWK:4]OTIzUY?mKd611
+IRC`<o3O<fflV>=mKcf1iK3
+R2
+R0
+w1531617115
+8CPU_Single_tb.v
+FCPU_Single_tb.v
+L0 4
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+n@c@p@u_tb
+vDataMemory
+R1
+!i10b 1
+!s100 >O?fV:gLm2i1m3QFjP6V41
+IzYz91:dWdFVEj6M]<6H^L0
+R2
+R0
+R11
+8DataMemory.v
+FDataMemory.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+n@data@memory
+vdivide
+R1
+!i10b 1
+!s100 10J3=;hhcC27i`d9CoPU]1
+I:`L8=[_9FWClWYFBJ7Dm[0
+R2
+R0
+w1531544561
+8divide.v
+Fdivide.v
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+vInstructionMemory
+R1
+!i10b 1
+!s100 `>b26gdPO`_@iBBOEBe=h3
+I5F4Y]kkZEf=EY:U]gfZ0G1
+R2
+R0
+w1531542066
+8InstructionMemory.v
+FInstructionMemory.v
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+n@instruction@memory
+vRegisterFile
+R1
+!i10b 1
+!s100 jkLGPQTh^aLX08oaAo8<S3
+I:PO[?[F63gF7<fbz@SFeS0
+R2
+R0
+R11
+8RegisterFile.v
+FRegisterFile.v
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+n@register@file
+vShift_Left
+R1
+!i10b 1
+!s100 TBbW0LIlNIQn^j30Q;J1U0
+IbYQg2K71DBMH7@99bTU_@2
+R2
+R0
+R3
+R4
+R5
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+n@shift_@left
+vShift_Right
+R1
+!i10b 1
+!s100 TMZm`K_3=N7^WgC7b=8H>1
+IUD0LYUSboi9^h1VeKCP0F1
+R2
+R0
+R3
+R4
+R5
+L0 16
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+n@shift_@right
+vTimer
+R1
+!i10b 1
+!s100 jmfC0KOUzdd5G??WKIl@E3
+I`Cj:WZMf31Zig?5lAF<;D2
+R2
+R0
+w1531544329
+8Timer.v
+FTimer.v
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+n@timer
+vUART
+R1
+!i10b 1
+!s100 0Ebkn7T`hlN9n0fh2oOoh2
+IZ47bjcniI4hIC?dB1CTgC0
+R2
+R0
+w1531714350
+8UART.v
+FUART.v
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+n@u@a@r@t
+vUARTReceiver
+R1
+!i10b 1
+!s100 T8`b4KzNkA95HMMIcC7@03
+I4co=C4g9F>PI=^T4GRe^o3
+R2
+R0
+R11
+8UARTReceiver.v
+FUARTReceiver.v
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+n@u@a@r@t@receiver
+vUARTSender
+R1
+!i10b 1
+!s100 o1FMZ?zn;ni<KXQAHcUdW3
+IUz>_DV;o:E9_dcdWHDUfW0
+R2
+R0
+R11
+8UARTSender.v
+FUARTSender.v
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+n@u@a@r@t@sender

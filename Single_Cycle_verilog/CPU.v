@@ -54,6 +54,7 @@ sys_clk,reset,UART_RX,UART_TX,LED,TUBE
 	wire LUOp;
 	reg IRQ;
 	wire if_continue;
+	wire [31:0] ALU_OUT;
 	wire [31:0] Instruction;
 	
 	initial begin IRQ<=1'b0;end
@@ -120,7 +121,6 @@ sys_clk,reset,UART_RX,UART_TX,LED,TUBE
 	wire [31:0] ALUA;
 	wire [31:0] ALUB;
 	wire [31:0] LU_OUT;
-	wire [31:0] ALU_OUT;
 	assign ImmedNum=ExtOp?{{16{Imm16[15]}},Imm16}:{16'b0,Imm16};
 	assign LU_OUT=LUOp?{Imm16,16'b0}:ImmedNum;
 	assign ConBA={ImmedNum[29:0],2'b00}+PC+32'd4;
