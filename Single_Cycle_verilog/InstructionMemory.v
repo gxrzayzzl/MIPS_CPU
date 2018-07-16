@@ -1,4 +1,3 @@
-//对汇编码的修改包括：32位立即数相关，几处笔误，blt改为bltz，Exception后添加返回（此处及中断是否应该返回的是26号而非31号？）
 module InstructionMemory(Address, Instruction);
 	input [31:0] Address;
 	output reg [31:0] Instruction;
