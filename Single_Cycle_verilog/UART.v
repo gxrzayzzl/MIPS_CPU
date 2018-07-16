@@ -26,7 +26,7 @@ output[7:0] readdata
     wire trigger;
     assign trigger = ~Uart_state_trigger;
     
-    initial begin recv_state_reg = 1'b0; send_state_reg = 1'b0; end
+    initial begin recv_state_reg = 1'b0; send_state_reg = 1'b1; end
     
     always @(posedge trigger or posedge send_finish)
         begin if(Uart_state_trigger == 1'b0 && send_finish == 1'b0) send_state_reg <= 1'b0;

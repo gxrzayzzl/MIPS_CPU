@@ -126,7 +126,7 @@ sys_clk,reset,UART_RX,UART_TX,LED,TUBE
 	assign ConBA={ImmedNum[29:0],2'b00}+PC+32'd4;
 	assign ALUA=ALUSrc1?{27'b0,Shamt}:Databus_A;
 	assign ALUB=ALUSrc2?LU_OUT:Databus_B;
-	ALU alu(.A(ALUA),.B(ALUB),.ALUFun(ALUFun),.sign(Sign),.Z(ALU_OUT));
+	ALU alu(.A(ALUA),.B(ALUB),.ALUFun(ALUFun),.sign(Sign),.ALUOUT(ALU_OUT));
 	
 	wire [31:0] ReadData;
 	

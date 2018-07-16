@@ -9,316 +9,301 @@ z2
 cModel Technology
 Z0 dE:/CPU/Single_Cycle_verilog
 vALU
-Z1 !s110 1531715231
-!i10b 1
-!s100 0QY;[V4iAR<NQS<jVe3`S2
-I]MIi`X7I7>0h>0N_l1Ym00
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-R0
-Z3 w1531626150
-Z4 8ALU.v
-Z5 FALU.v
-L0 31
-Z6 OL;L;10.4;61
+Z1 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
 31
-Z7 !s108 1531715231.159000
-Z8 !s107 CPU_Single_tb.v|RegisterFile.v|InstructionMemory.v|BaudGenerator.v|CPU.v|divide.v|UARTSender.v|UART.v|DataMemory.v|ALU.v|Timer.v|Control.v|UARTReceiver.v|
-Z9 !s90 -reportprogress|300|UARTReceiver.v|Control.v|Timer.v|ALU.v|DataMemory.v|UART.v|UARTSender.v|divide.v|CPU.v|BaudGenerator.v|InstructionMemory.v|RegisterFile.v|CPU_Single_tb.v|
+!i10b 1
+!s100 ^4zjC]SD;=UZb^9?z^]Xe3
+I_4H?NG1[F^7N^Ql4Z5Ze]3
+R0
+Z2 w1531755692
+Z3 8E:/CPU/Single_Cycle_verilog/ALU.v
+Z4 FE:/CPU/Single_Cycle_verilog/ALU.v
+L0 31
+Z5 OL;L;10.4;61
+Z6 !s108 1531765376.588000
+Z7 !s107 E:/CPU/Single_Cycle_verilog/ALU.v|
+Z8 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/ALU.v|
 !i113 0
-Z10 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z9 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 n@a@l@u
 vBaudGenerator
 R1
-!i10b 1
-!s100 :TY?D7f3UGQj^VHAkJ6_c3
-ILL_dD7N_<bSda;Pbo`6EH1
-R2
-R0
-Z11 w1531710228
-8BaudGenerator.v
-FBaudGenerator.v
-L0 1
-R6
 r1
 !s85 0
 31
-R7
-R8
-R9
+!i10b 1
+!s100 jY_8?f7>E<h]?Wm7bUR3<0
+IYNcYAUMC[?P5ThWK`KX4J0
+R0
+Z10 w1531750065
+8E:/CPU/Single_Cycle_verilog/BaudGenerator.v
+FE:/CPU/Single_Cycle_verilog/BaudGenerator.v
+L0 1
+R5
+!s108 1531765376.798000
+!s107 E:/CPU/Single_Cycle_verilog/BaudGenerator.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/BaudGenerator.v|
 !i113 0
-R10
+R9
 n@baud@generator
 vControl
 R1
-!i10b 1
-!s100 Z2jnoRUY096cEQC31dk301
-I;[czgOb@o;0alJ6_a:N>a2
-R2
-R0
-R3
-8Control.v
-FControl.v
-L0 2
-R6
 r1
 !s85 0
 31
-R7
-R8
-R9
+!i10b 1
+!s100 7S<@e^acOmUeSEk35RG]N0
+IXD>GfZ]NMEb9zLzNEc8HC0
+R0
+R2
+8E:/CPU/Single_Cycle_verilog/Control.v
+FE:/CPU/Single_Cycle_verilog/Control.v
+L0 2
+R5
+!s108 1531765376.878000
+!s107 E:/CPU/Single_Cycle_verilog/Control.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/Control.v|
 !i113 0
-R10
+R9
 n@control
 vCPU
 R1
-!i10b 1
-!s100 X54ln[H`KBT1EbKDzKjXl3
-I4X^giAzPdV<7R0:ABF1FT3
-R2
-R0
-w1531715149
-8CPU.v
-FCPU.v
-L0 23
-R6
 r1
 !s85 0
 31
-R7
-R8
-R9
+!i10b 1
+!s100 AGRWOQ2Z^D?GneCJ[:GBa0
+IUcWJZllbh>z[@RPigIYJi0
+R0
+w1531755825
+8E:/CPU/Single_Cycle_verilog/CPU.v
+FE:/CPU/Single_Cycle_verilog/CPU.v
+L0 23
+R5
+!s108 1531765376.968000
+!s107 E:/CPU/Single_Cycle_verilog/CPU.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/CPU.v|
 !i113 0
-R10
+R9
 n@c@p@u
 vCPU_tb
 R1
-!i10b 1
-!s100 VEfzWK:4]OTIzUY?mKd611
-IRC`<o3O<fflV>=mKcf1iK3
-R2
-R0
-w1531617115
-8CPU_Single_tb.v
-FCPU_Single_tb.v
-L0 4
-R6
 r1
 !s85 0
 31
-R7
-R8
-R9
+!i10b 1
+!s100 F5H00cYg2Q[6^J`Ag>ddo1
+If0k_hY:^ZJ^Pm0YK_HVCm2
+R0
+Z11 w1531750079
+8E:/CPU/Single_Cycle_verilog/CPU_Single_tb.v
+FE:/CPU/Single_Cycle_verilog/CPU_Single_tb.v
+L0 4
+R5
+!s108 1531765377.048000
+!s107 E:/CPU/Single_Cycle_verilog/CPU_Single_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/CPU_Single_tb.v|
 !i113 0
-R10
+R9
 n@c@p@u_tb
 vDataMemory
 R1
-!i10b 1
-!s100 >O?fV:gLm2i1m3QFjP6V41
-IzYz91:dWdFVEj6M]<6H^L0
-R2
-R0
-R11
-8DataMemory.v
-FDataMemory.v
-L0 1
-R6
 r1
 !s85 0
 31
-R7
-R8
-R9
+!i10b 1
+!s100 YgX1_l6KFkOI1;OgT^[Gf2
+I:KmAX0R`zA3`REbJmb0QQ3
+R0
+R11
+8E:/CPU/Single_Cycle_verilog/DataMemory.v
+FE:/CPU/Single_Cycle_verilog/DataMemory.v
+L0 1
+R5
+!s108 1531765377.127000
+!s107 E:/CPU/Single_Cycle_verilog/DataMemory.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/DataMemory.v|
 !i113 0
-R10
+R9
 n@data@memory
 vdivide
 R1
-!i10b 1
-!s100 10J3=;hhcC27i`d9CoPU]1
-I:`L8=[_9FWClWYFBJ7Dm[0
-R2
-R0
-w1531544561
-8divide.v
-Fdivide.v
-L0 2
-R6
 r1
 !s85 0
 31
-R7
-R8
-R9
-!i113 0
+!i10b 1
+!s100 gC2z2cgV@1^VTD;E<0Df^2
+IS2JUUWH9e3NNYcCM?oCQC2
+R0
 R10
+8E:/CPU/Single_Cycle_verilog/divide.v
+FE:/CPU/Single_Cycle_verilog/divide.v
+L0 2
+R5
+!s108 1531765377.200000
+!s107 E:/CPU/Single_Cycle_verilog/divide.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/divide.v|
+!i113 0
+R9
 vInstructionMemory
 R1
-!i10b 1
-!s100 `>b26gdPO`_@iBBOEBe=h3
-I5F4Y]kkZEf=EY:U]gfZ0G1
-R2
-R0
-w1531542066
-8InstructionMemory.v
-FInstructionMemory.v
-L0 2
-R6
 r1
 !s85 0
 31
-R7
-R8
-R9
+!i10b 1
+!s100 ;7HOLo:CoAUz94ebK@k=W3
+IL0RRG?nY6e8:KoekKPj^n2
+R0
+w1531771585
+8E:/CPU/Single_Cycle_verilog/InstructionMemory.v
+FE:/CPU/Single_Cycle_verilog/InstructionMemory.v
+L0 2
+R5
+!s108 1531771592.745000
+!s107 E:/CPU/Single_Cycle_verilog/InstructionMemory.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/InstructionMemory.v|
 !i113 0
-R10
+R9
 n@instruction@memory
 vRegisterFile
 R1
-!i10b 1
-!s100 jkLGPQTh^aLX08oaAo8<S3
-I:PO[?[F63gF7<fbz@SFeS0
-R2
-R0
-R11
-8RegisterFile.v
-FRegisterFile.v
-L0 2
-R6
 r1
 !s85 0
 31
-R7
-R8
-R9
-!i113 0
+!i10b 1
+!s100 7S_Zm[maD^^hQ>SWoEBkM3
+I33JLl5X4IL0?6ifYi;3`F0
+R0
 R10
+8E:/CPU/Single_Cycle_verilog/RegisterFile.v
+FE:/CPU/Single_Cycle_verilog/RegisterFile.v
+L0 2
+R5
+!s108 1531765377.368000
+!s107 E:/CPU/Single_Cycle_verilog/RegisterFile.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/RegisterFile.v|
+!i113 0
+R9
 n@register@file
 vShift_Left
 R1
-!i10b 1
-!s100 TBbW0LIlNIQn^j30Q;J1U0
-IbYQg2K71DBMH7@99bTU_@2
-R2
-R0
-R3
-R4
-R5
-L0 1
-R6
 r1
 !s85 0
 31
+!i10b 1
+!s100 hJ^HcG;WXo;hVPJH:6Umj0
+IVQcn=DMWb[z7:;B2B5AC=2
+R0
+R2
+R3
+R4
+L0 1
+R5
+R6
 R7
 R8
-R9
 !i113 0
-R10
+R9
 n@shift_@left
 vShift_Right
 R1
-!i10b 1
-!s100 TMZm`K_3=N7^WgC7b=8H>1
-IUD0LYUSboi9^h1VeKCP0F1
-R2
-R0
-R3
-R4
-R5
-L0 16
-R6
 r1
 !s85 0
 31
+!i10b 1
+!s100 n?9^IO:YVF?lL5nbbEm7Z0
+I3VHW5_mR?8Ie8[HcolaRU3
+R0
+R2
+R3
+R4
+L0 16
+R5
+R6
 R7
 R8
-R9
 !i113 0
-R10
+R9
 n@shift_@right
 vTimer
 R1
-!i10b 1
-!s100 jmfC0KOUzdd5G??WKIl@E3
-I`Cj:WZMf31Zig?5lAF<;D2
-R2
-R0
-w1531544329
-8Timer.v
-FTimer.v
-L0 2
-R6
 r1
 !s85 0
 31
-R7
-R8
-R9
+!i10b 1
+!s100 PT87Z1KhELV4W>m8E:L^P1
+IeWdTn9RkIm^fmLb<dF<Mj3
+R0
+w1531767568
+8E:/CPU/Single_Cycle_verilog/Timer.v
+FE:/CPU/Single_Cycle_verilog/Timer.v
+L0 2
+R5
+!s108 1531767573.763000
+!s107 E:/CPU/Single_Cycle_verilog/Timer.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/Timer.v|
 !i113 0
-R10
+R9
 n@timer
 vUART
 R1
-!i10b 1
-!s100 0Ebkn7T`hlN9n0fh2oOoh2
-IZ47bjcniI4hIC?dB1CTgC0
-R2
-R0
-w1531714350
-8UART.v
-FUART.v
-L0 2
-R6
 r1
 !s85 0
 31
-R7
-R8
-R9
+!i10b 1
+!s100 bZmRz0`z7XSZn461F=i2^2
+I@2J[II]1_B?MZKQdBjUSj2
+R0
+w1531764887
+8E:/CPU/Single_Cycle_verilog/UART.v
+FE:/CPU/Single_Cycle_verilog/UART.v
+L0 2
+R5
+!s108 1531765377.588000
+!s107 E:/CPU/Single_Cycle_verilog/UART.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/UART.v|
 !i113 0
-R10
+R9
 n@u@a@r@t
 vUARTReceiver
 R1
-!i10b 1
-!s100 T8`b4KzNkA95HMMIcC7@03
-I4co=C4g9F>PI=^T4GRe^o3
-R2
-R0
-R11
-8UARTReceiver.v
-FUARTReceiver.v
-L0 2
-R6
 r1
 !s85 0
 31
-R7
-R8
-R9
+!i10b 1
+!s100 TWUo:;`FI0XTM;>n^lGH12
+Ie0o8RViDJlMeZ[o_H39Fk3
+R0
+R11
+8E:/CPU/Single_Cycle_verilog/UARTReceiver.v
+FE:/CPU/Single_Cycle_verilog/UARTReceiver.v
+L0 2
+R5
+!s108 1531765377.668000
+!s107 E:/CPU/Single_Cycle_verilog/UARTReceiver.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/UARTReceiver.v|
 !i113 0
-R10
+R9
 n@u@a@r@t@receiver
 vUARTSender
 R1
-!i10b 1
-!s100 o1FMZ?zn;ni<KXQAHcUdW3
-IUz>_DV;o:E9_dcdWHDUfW0
-R2
-R0
-R11
-8UARTSender.v
-FUARTSender.v
-L0 2
-R6
 r1
 !s85 0
 31
-R7
-R8
-R9
-!i113 0
+!i10b 1
+!s100 o1FMZ?zn;ni<KXQAHcUdW3
+IL`VF7SgO4[]OBlI3bU=Dl2
+R0
 R10
+8E:/CPU/Single_Cycle_verilog/UARTSender.v
+FE:/CPU/Single_Cycle_verilog/UARTSender.v
+L0 2
+R5
+!s108 1531765376.518000
+!s107 E:/CPU/Single_Cycle_verilog/UARTSender.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/UARTSender.v|
+!i113 0
+R9
 n@u@a@r@t@sender

@@ -1,4 +1,11 @@
-E:/CPU/Single_Cycle_verilog/UARTReceiver.v {1 {vlog -work work -vopt -stats=none E:/CPU/Single_Cycle_verilog/UARTReceiver.v
+E:/CPU/Single_Cycle_verilog/Timer.v {1 {vlog -work work -vopt -stats=none E:/CPU/Single_Cycle_verilog/Timer.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Timer
+
+Top level modules:
+	Timer
+
+} {} {}} E:/CPU/Single_Cycle_verilog/UARTReceiver.v {1 {vlog -work work -vopt -stats=none E:/CPU/Single_Cycle_verilog/UARTReceiver.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module UARTReceiver
 
@@ -11,13 +18,6 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 
 Top level modules:
 	Control
-
-} {} {}} E:/CPU/Single_Cycle_verilog/Timer.v {1 {vlog -work work -vopt -stats=none E:/CPU/Single_Cycle_verilog/Timer.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module Timer
-
-Top level modules:
-	Timer
 
 } {} {}} E:/CPU/Single_Cycle_verilog/ALU.v {1 {vlog -work work -vopt -stats=none E:/CPU/Single_Cycle_verilog/ALU.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
@@ -42,19 +42,19 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	UART
 
-} {} {}} E:/CPU/Single_Cycle_verilog/UARTSender.v {1 {vlog -work work -vopt -stats=none E:/CPU/Single_Cycle_verilog/UARTSender.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module UARTSender
-
-Top level modules:
-	UARTSender
-
 } {} {}} E:/CPU/Single_Cycle_verilog/divide.v {1 {vlog -work work -vopt -stats=none E:/CPU/Single_Cycle_verilog/divide.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module divide
 
 Top level modules:
 	divide
+
+} {} {}} E:/CPU/Single_Cycle_verilog/UARTSender.v {1 {vlog -work work -vopt -stats=none E:/CPU/Single_Cycle_verilog/UARTSender.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module UARTSender
+
+Top level modules:
+	UARTSender
 
 } {} {}} E:/CPU/Single_Cycle_verilog/CPU.v {1 {vlog -work work -vopt -stats=none E:/CPU/Single_Cycle_verilog/CPU.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
@@ -63,19 +63,19 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	CPU
 
-} {} {}} E:/CPU/Single_Cycle_verilog/BaudGenerator.v {1 {vlog -work work -vopt -stats=none E:/CPU/Single_Cycle_verilog/BaudGenerator.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module BaudGenerator
-
-Top level modules:
-	BaudGenerator
-
 } {} {}} E:/CPU/Single_Cycle_verilog/InstructionMemory.v {1 {vlog -work work -vopt -stats=none E:/CPU/Single_Cycle_verilog/InstructionMemory.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module InstructionMemory
 
 Top level modules:
 	InstructionMemory
+
+} {} {}} E:/CPU/Single_Cycle_verilog/BaudGenerator.v {1 {vlog -work work -vopt -stats=none E:/CPU/Single_Cycle_verilog/BaudGenerator.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module BaudGenerator
+
+Top level modules:
+	BaudGenerator
 
 } {} {}} E:/CPU/Single_Cycle_verilog/RegisterFile.v {1 {vlog -work work -vopt -stats=none E:/CPU/Single_Cycle_verilog/RegisterFile.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
