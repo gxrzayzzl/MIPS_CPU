@@ -33,7 +33,7 @@ module CPU_tb();
 		#208332 UART_RX=0;
 		#520832 UART_RX=1;
 		#104166 UART_RX=0;
-		#416666 UART_RX=1;
+		#166666 UART_RX=1;
 	end
 	
 	CPU cpu(.sys_clk(sys_clk),.reset(reset),.UART_RX(UART_RX),.UART_TX(UART_TX),.LED(LED),.TUBE(TUBE));

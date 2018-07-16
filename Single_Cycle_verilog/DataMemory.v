@@ -38,7 +38,7 @@ reg Uart_state_trigger;
 integer i;
 
     always@ (*)
-    if(read_enable && address == 32'h40000020) Uart_state_trigger = 1'b1;
+    if(read_enable && address == 32'h4000001C) Uart_state_trigger = 1'b1;
     else Uart_state_trigger = 1'b0;
 
     always@ (*)
