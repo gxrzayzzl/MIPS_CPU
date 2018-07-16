@@ -24,14 +24,15 @@ output[7:0] readdata
     wire recv_finish;
     assign recv_finish = ~recv_state;
     
-    always @(posedge sysclk)
-        begin if(Uart_state_trigger == 1'b1) begin send_state_reg <= 1'b0; recv_state_reg <= 1'b0; end
-        else begin
-        if(send_finish == 1'b1) send_state_reg <= send_finish;
-        if(recv_finish == 1'b1) recv_state_reg <= recv_finish;
-            end
+    always @(posedge ~Uart_state_trigger or posedge send_finish)
+        begin if(Uart_state_trigger == 1'b0 && send_finish == 1'b0) send_state_reg <= 1'b0;
+        else  send_state_reg <= 1'b1;
         end
     
+    always @(posedge ~Uart_state_trigger or posedge recv_finish)
+        begin if(Uart_state_trigger == 1'b0 && recv_finish == 1'b0) recv_state_reg <= 1'b0;
+        else  recv_state_reg <= 1'b1;
+        end
     
     UARTReceiver recv(sysclk,UART_RX,recv_enable,recv_finish,readdata);
     UARTSender send(sysclk,writedata,send_trigger,send_enable,send_work_state,send_finish,UART_TX);
