@@ -24,19 +24,11 @@ output[7:0] readdata
     wire recv_finish;
     assign recv_finish = ~recv_state;
     
-<<<<<<< HEAD
     always @(posedge sysclk)
         begin if(Uart_state_trigger == 1'b1) begin send_state_reg <= 1'b0; recv_state_reg <= 1'b0; end
         else begin
         if(send_finish == 1'b1) send_state_reg <= send_finish;
         if(recv_finish == 1'b1) recv_state_reg <= recv_finish;
-=======
-    always @(posedge ~Uart_state_trigger or posedge send_finish or posedge recv_finish)
-        begin if(Uart_state_trigger == 1'b1) begin send_state_reg <= 1'b0; recv_state_reg <= 1'b0; end
-        else begin
-            send_state_reg <= (send_finish | send_state_reg);
-            recv_state_reg <= (recv_finish | recv_state_reg);
->>>>>>> 8fe8f2a31b5fc5ac15b62efe167ce604bfba137f
             end
         end
     

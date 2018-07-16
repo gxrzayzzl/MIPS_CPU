@@ -1,0 +1,2 @@
+﻿使用方法：
+把 code.txt 放在同目录下，打开Assembler即可。

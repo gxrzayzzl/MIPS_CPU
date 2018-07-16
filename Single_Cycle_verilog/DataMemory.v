@@ -44,11 +44,7 @@ integer i;
     always@ (*)
     if(read_enable) begin
             case(address)   
-<<<<<<< HEAD
                 32'h4000001C : tmp = {24'b0,UartReadData};
-=======
-                32'h4000001c : tmp = {24'b0,UartReadData};
->>>>>>> 8fe8f2a31b5fc5ac15b62efe167ce604bfba137f
                 32'h40000010 : tmp = {24'b0,switch};
                 32'h40000020 : tmp = {27'b0,Uart_CON_R,Uart_CON_W};
                 32'h40000008 : tmp = {29'b0,timer_CON_R,timer_CON_W};

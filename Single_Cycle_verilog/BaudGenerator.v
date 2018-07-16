@@ -4,7 +4,6 @@ input trigger,
 input enable,
 output finish,
 output status,
-output finish,
 output bud_clk
     );
     
@@ -17,12 +16,8 @@ output bud_clk
     reg finish_reg;
     assign finish = finish_reg;
     
-<<<<<<< HEAD
     initial finish_reg = 1'b0;
     initial Status = 1'b0;
-=======
-    initial begin Status = 1'b0; finish_reg = 1'b0; end
->>>>>>> 8fe8f2a31b5fc5ac15b62efe167ce604bfba137f
     
     always @(posedge sysclk)
     begin
