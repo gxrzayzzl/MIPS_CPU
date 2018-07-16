@@ -33,10 +33,10 @@ module ALU(
 	input [31:0] B,
 	input [5:0] ALUFun,
 	input sign,
-	output reg [31:0] Z
+	output [31:0] ALUOUT
 	);
 	
-	reg [31:0]Math,Cmp,Logic,Shift;
+	reg [31:0]Math,Cmp,Logic,Shift,Z;
 	
 	assign Zero = (Math == 0);
 	assign N = sign && Math[31];
@@ -85,4 +85,5 @@ module ALU(
 			2'b11:		Z <= Cmp;
 		endcase
 	end
+	assign ALUOUT=Z;
 endmodule
