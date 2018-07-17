@@ -8,6 +8,14 @@ z2
 !i10f 100
 cModel Technology
 Z0 dE:/CPU/Single_Cycle_verilog
+T_opt
+!s110 1531841079
+VY<iPQeC1f5HFoO1dSlAX80
+04 6 4 work CPU_tb fast 0
+=1-c85b76a5a60f-5b4e0a37-b0-1fe0
+o-quiet -auto_acc_if_foreign -work work
+n@_opt
+OL;O;10.4;61
 vALU
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 r1
@@ -17,12 +25,12 @@ r1
 !s100 ^4zjC]SD;=UZb^9?z^]Xe3
 I_4H?NG1[F^7N^Ql4Z5Ze]3
 R0
-Z2 w1531755692
+Z2 w1531869223
 Z3 8E:/CPU/Single_Cycle_verilog/ALU.v
 Z4 FE:/CPU/Single_Cycle_verilog/ALU.v
 L0 31
 Z5 OL;L;10.4;61
-Z6 !s108 1531765376.588000
+Z6 !s108 1531840984.396000
 Z7 !s107 E:/CPU/Single_Cycle_verilog/ALU.v|
 Z8 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/ALU.v|
 !i113 0
@@ -34,15 +42,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 jY_8?f7>E<h]?Wm7bUR3<0
-IYNcYAUMC[?P5ThWK`KX4J0
+!s100 32VP7z_9d=8k49onR=Qk21
+IooE;L1NGQD9eXmodG8Iz21
 R0
-Z10 w1531750065
+w1531876482
 8E:/CPU/Single_Cycle_verilog/BaudGenerator.v
 FE:/CPU/Single_Cycle_verilog/BaudGenerator.v
 L0 1
 R5
-!s108 1531765376.798000
+!s108 1531840984.486000
 !s107 E:/CPU/Single_Cycle_verilog/BaudGenerator.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/BaudGenerator.v|
 !i113 0
@@ -62,7 +70,7 @@ R2
 FE:/CPU/Single_Cycle_verilog/Control.v
 L0 2
 R5
-!s108 1531765376.878000
+!s108 1531840984.566000
 !s107 E:/CPU/Single_Cycle_verilog/Control.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/Control.v|
 !i113 0
@@ -74,15 +82,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 AGRWOQ2Z^D?GneCJ[:GBa0
-IUcWJZllbh>z[@RPigIYJi0
+!s100 3`mbhYfh^fingSAX`5^1Z0
+I]mjnH6;JQB]cKFIOVbLaT3
 R0
-w1531755825
+w1531880270
 8E:/CPU/Single_Cycle_verilog/CPU.v
 FE:/CPU/Single_Cycle_verilog/CPU.v
 L0 23
 R5
-!s108 1531765376.968000
+!s108 1531840984.656000
 !s107 E:/CPU/Single_Cycle_verilog/CPU.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/CPU.v|
 !i113 0
@@ -97,12 +105,12 @@ r1
 !s100 F5H00cYg2Q[6^J`Ag>ddo1
 If0k_hY:^ZJ^Pm0YK_HVCm2
 R0
-Z11 w1531750079
+w1531788518
 8E:/CPU/Single_Cycle_verilog/CPU_Single_tb.v
 FE:/CPU/Single_Cycle_verilog/CPU_Single_tb.v
 L0 4
 R5
-!s108 1531765377.048000
+!s108 1531840984.736000
 !s107 E:/CPU/Single_Cycle_verilog/CPU_Single_tb.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/CPU_Single_tb.v|
 !i113 0
@@ -114,15 +122,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 YgX1_l6KFkOI1;OgT^[Gf2
-I:KmAX0R`zA3`REbJmb0QQ3
+!s100 2_859<D9>1m59Z0;N1hjO1
+IRj2j1=Gm`9onhc2lUZ7Fc3
 R0
-R11
+w1531880951
 8E:/CPU/Single_Cycle_verilog/DataMemory.v
 FE:/CPU/Single_Cycle_verilog/DataMemory.v
 L0 1
 R5
-!s108 1531765377.127000
+!s108 1531840984.816000
 !s107 E:/CPU/Single_Cycle_verilog/DataMemory.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/DataMemory.v|
 !i113 0
@@ -134,15 +142,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 gC2z2cgV@1^VTD;E<0Df^2
-IS2JUUWH9e3NNYcCM?oCQC2
+!s100 BSP^=10L0AW44H>0IDfU@0
+I<^T6ijmNV:?gYO_VSULJK1
 R0
-R10
+w1531883062
 8E:/CPU/Single_Cycle_verilog/divide.v
 FE:/CPU/Single_Cycle_verilog/divide.v
 L0 2
 R5
-!s108 1531765377.200000
+!s108 1531840984.886000
 !s107 E:/CPU/Single_Cycle_verilog/divide.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/divide.v|
 !i113 0
@@ -153,15 +161,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 ;7HOLo:CoAUz94ebK@k=W3
-IL0RRG?nY6e8:KoekKPj^n2
+!s100 ZB6N8[1;U:l3:JMM;PFlA2
+I<zDWEK:jMhSmJU:hhLb0:1
 R0
-w1531771585
+R2
 8E:/CPU/Single_Cycle_verilog/InstructionMemory.v
 FE:/CPU/Single_Cycle_verilog/InstructionMemory.v
-L0 2
+L0 1
 R5
-!s108 1531771592.745000
+!s108 1531840984.956000
 !s107 E:/CPU/Single_Cycle_verilog/InstructionMemory.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/InstructionMemory.v|
 !i113 0
@@ -176,12 +184,12 @@ r1
 !s100 7S_Zm[maD^^hQ>SWoEBkM3
 I33JLl5X4IL0?6ifYi;3`F0
 R0
-R10
+w1531670682
 8E:/CPU/Single_Cycle_verilog/RegisterFile.v
 FE:/CPU/Single_Cycle_verilog/RegisterFile.v
 L0 2
 R5
-!s108 1531765377.368000
+!s108 1531840985.046000
 !s107 E:/CPU/Single_Cycle_verilog/RegisterFile.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/RegisterFile.v|
 !i113 0
@@ -236,12 +244,12 @@ r1
 !s100 PT87Z1KhELV4W>m8E:L^P1
 IeWdTn9RkIm^fmLb<dF<Mj3
 R0
-w1531767568
+R2
 8E:/CPU/Single_Cycle_verilog/Timer.v
 FE:/CPU/Single_Cycle_verilog/Timer.v
 L0 2
 R5
-!s108 1531767573.763000
+!s108 1531840985.156000
 !s107 E:/CPU/Single_Cycle_verilog/Timer.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/Timer.v|
 !i113 0
@@ -253,15 +261,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 bZmRz0`z7XSZn461F=i2^2
-I@2J[II]1_B?MZKQdBjUSj2
+!s100 i@>LK5jc0gKVlGSWRMPM_1
+Iinj=5>2z??dHT29RV334f3
 R0
-w1531764887
+w1531880835
 8E:/CPU/Single_Cycle_verilog/UART.v
 FE:/CPU/Single_Cycle_verilog/UART.v
 L0 2
 R5
-!s108 1531765377.588000
+!s108 1531840985.226000
 !s107 E:/CPU/Single_Cycle_verilog/UART.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/UART.v|
 !i113 0
@@ -273,15 +281,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 TWUo:;`FI0XTM;>n^lGH12
-Ie0o8RViDJlMeZ[o_H39Fk3
+!s100 >4K5:?F49JZD6]B74RhV:1
+I:VU9oQBEe]SaScTJ<WMQf0
 R0
-R11
+w1531880949
 8E:/CPU/Single_Cycle_verilog/UARTReceiver.v
 FE:/CPU/Single_Cycle_verilog/UARTReceiver.v
 L0 2
 R5
-!s108 1531765377.668000
+!s108 1531840985.316000
 !s107 E:/CPU/Single_Cycle_verilog/UARTReceiver.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/UARTReceiver.v|
 !i113 0
@@ -293,15 +301,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 o1FMZ?zn;ni<KXQAHcUdW3
-IL`VF7SgO4[]OBlI3bU=Dl2
+!s100 S8J9hBm6XEE3ZQFF<?]3V1
+I=mbC<nNazWDERYz[QkjPJ0
 R0
-R10
+w1531880829
 8E:/CPU/Single_Cycle_verilog/UARTSender.v
 FE:/CPU/Single_Cycle_verilog/UARTSender.v
 L0 2
 R5
-!s108 1531765376.518000
+!s108 1531840984.336000
 !s107 E:/CPU/Single_Cycle_verilog/UARTSender.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/CPU/Single_Cycle_verilog/UARTSender.v|
 !i113 0

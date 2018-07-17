@@ -18,6 +18,7 @@ output bud_clk
     
     initial finish_reg = 1'b0;
     initial Status = 1'b0;
+    initial tmp = 1'b0;
     
     always @(posedge sysclk)
     begin
@@ -25,8 +26,8 @@ output bud_clk
         if(Status == 1'b0 && trigger == 1'b1 && enable == 1'b1)
         begin
             Status <= 1'b1;
-            count = 5'b0_0000;
-            state = 13'b0_0000_0000_0000;
+            count <= 5'b0_0000;
+            state <= 13'b0_0000_0000_0000;
         end else if(Status == 1'b1)
         begin
             state = state + 13'b0_0000_0000_0001;

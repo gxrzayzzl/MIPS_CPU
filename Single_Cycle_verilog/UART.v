@@ -1,6 +1,5 @@
 `timescale 1ns / 1ps
 module UART(
-input clk,
 input sysclk,
 input Uart_state_trigger,
 input UART_RX,
@@ -11,7 +10,7 @@ input send_trigger,
 output wire send_work_state,
 output recv_state,
 output send_state,
-output UART_TX,
+output wire UART_TX,
 output[7:0] readdata
     );
     
@@ -25,6 +24,7 @@ output[7:0] readdata
     
     wire trigger;
     assign trigger = ~Uart_state_trigger;
+    wire Op_send_trigger;
     assign Op_send_trigger = ~send_trigger;
     
 

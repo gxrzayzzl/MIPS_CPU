@@ -1,0 +1,56 @@
+# Reading D:/Modelsim/tcl/vsim/pref.tcl
+# //  ModelSim SE-64 10.4 Dec  3 2014 
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# OpenFile E:/CPU/Single_Cycle_verilog/CPU_S.mpf
+# Loading project CPU_S
+vsim -vopt work.CPU_tb
+# vsim -gui E:\CPU\Single_Cycle_verilog\CPU_S.mpf 
+# Start time: 11:24:38 on Jul 17,2018
+# ** Note: (vsim-3812) Design is being optimized...
+# 
+# Loading work.CPU_tb(fast)
+quit -sim
+vsim -novopt work.CPU_tb
+# vsim 
+# Start time: 11:24:49 on Jul 17,2018
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading work.CPU_tb
+# Loading work.CPU
+# Loading work.divide
+# Loading work.Control
+# Loading work.InstructionMemory
+# Loading work.RegisterFile
+# Loading work.ALU
+# Loading work.Shift_Left
+# Loading work.Shift_Right
+# Loading work.DataMemory
+# Loading work.Timer
+# Loading work.UART
+# Loading work.UARTReceiver
+# Loading work.BaudGenerator
+# Loading work.UARTSender
+add wave -position insertpoint  \
+sim:/CPU_tb/cpu/sys_clk \
+sim:/CPU_tb/cpu/UART_RX \
+sim:/CPU_tb/cpu/UART_TX \
+sim:/CPU_tb/cpu/LED \
+sim:/CPU_tb/cpu/TUBE \
+sim:/CPU_tb/cpu/clk
+run -all
+# Break key hit
+# Break in Module CPU_tb at E:/CPU/Single_Cycle_verilog/CPU_Single_tb.v line 23
+# End time: 11:25:20 on Jul 17,2018, Elapsed time: 0:00:31
+# Errors: 0, Warnings: 1

@@ -28,6 +28,10 @@ sys_clk,reset,UART_RX,UART_TX,LED,TUBE
 	output [7:0] LED;
 	output [17:0] TUBE;
 	wire [7:0] switch;
+	// This is for temp
+	reg [7:0] switch_reg;
+	initial switch_reg = 8'b0;
+	assign switch = switch_reg;
 	
 	parameter ILLOP=32'h80000004;
 	parameter XADR=32'h80000008;

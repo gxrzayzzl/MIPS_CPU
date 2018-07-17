@@ -10,7 +10,7 @@ input[31:0] writedata,
 input[7:0] switch,
 output[7:0] led,
 output[17:0] tube,
-output Uart_Tx,
+output wire Uart_Tx,
 output wire[31:0] readdata,
 output if_continue
     );
@@ -315,8 +315,11 @@ integer i;
 
     always@ (posedge reset or posedge clk)
     if(reset)
-        for (i = 0; i < 256; i = i + 1)
-        memory[i] <= 32'h00000000;
+    begin
+        for (i = 0; i < 256; i = i + 1) memory[i] <= 32'h00000000;
+        tubereg <= {18'b11_1111_1111_1111_1111};
+        ledreg <= UartReadData;
+        end
     else begin 
         if(write_enable) begin
             case(address)
@@ -333,5 +336,5 @@ integer i;
     
     assign if_continue = timer_CON_R;
     Timer timer(clk,timer_CON_W,timer_TH,timer_CON_R,timer_TL);
-    UART Uart(clk,sysclk,Uart_state_trigger,Uart_Rx,UartWriteData,Uart_CON_W[1],Uart_CON_W[0],Uart_send_trigger,Uart_CON_R[0],Uart_CON_R[1],Uart_CON_R[2],Uart_Tx,UartReadData);
+    UART Uart(sysclk,Uart_state_trigger,Uart_Rx,UartWriteData,Uart_CON_W[1],Uart_CON_W[0],Uart_send_trigger,Uart_CON_R[0],Uart_CON_R[1],Uart_CON_R[2],Uart_Tx,UartReadData);
 endmodule

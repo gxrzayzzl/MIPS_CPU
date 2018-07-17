@@ -5,7 +5,7 @@ input[7:0] TX_DATA,
 input trigger,
 input enable,
 output state,
-output finish,
+output wire finish,
 output UART_TX
     );
     wire budclk;
@@ -15,11 +15,12 @@ output UART_TX
     assign UART_TX = tmp;
     reg[3:0] count;
     
-    initial tmp = 1'b0; 
+    initial tmp = 1'b1; 
+    initial count = 4'b0000;
 
     always @(posedge budclk)
     begin
-        if(count == 4'b1010) count = 4'b0000;
+        if(count == 4'b1010) count <= 4'b0000;
         tmp = (count == 4'b0000)?1'b0:
                 (count == 4'b0001)?~TX_DATA[0]:
                 (count == 4'b0010)?~TX_DATA[1]:
@@ -32,8 +33,6 @@ output UART_TX
                 (count == 4'b1001)?1'b1:1'b1;
                 count = count + 4'b0001;
     end
-    wire finish;
-
     reg trigger_reg;
     initial trigger_reg = 1'b1;
     
