@@ -14,13 +14,9 @@ output UART_TX
     reg tmp;
     assign UART_TX = tmp;
     reg[3:0] count;
-    reg finishreg;
-    assign finish = finishreg;
     
-    always @(posedge sysclk)
-        if(count == 4'b1010) finishreg = 1'b1;
-        else finishreg = 1'b0;
-    
+    initial tmp = 1'b0; 
+
     always @(posedge budclk)
     begin
         if(count == 4'b1010) count = 4'b0000;
@@ -36,7 +32,16 @@ output UART_TX
                 (count == 4'b1001)?1'b1:1'b1;
                 count = count + 4'b0001;
     end
-    wire no_use;
-    BaudGenerator baud(sysclk,enable,trigger,no_use,status,budclk);
+    wire finish;
+
+    reg trigger_reg;
+    initial trigger_reg = 1'b1;
+    
+    always@ (edge trigger)
+    begin if(trigger == 1'b0) trigger_reg <= 1'b0;
+    else trigger_reg <= 1'b1; 
+    end
+
+    BaudGenerator baud(sysclk,enable,trigger_reg,finish,status,budclk);
     
 endmodule
