@@ -41,6 +41,6 @@ output[7:0] readdata
         end
     
     UARTReceiver recv(sysclk,UART_RX,recv_enable,recv_finish,readdata);
-    UARTSender send(sysclk,writedata,Op_send_trigger,send_enable,send_work_state,send_finish,UART_TX);
+    UARTSender send(sysclk,writedata,send_trigger,send_enable,send_work_state,send_finish,UART_TX);
     
 endmodule
