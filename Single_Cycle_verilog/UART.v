@@ -10,7 +10,7 @@ input send_enable,
 input send_trigger,
 output send_state,
 output recv_state,
-output send_work_state,
+output wire send_work_state,
 output UART_TX,
 output[7:0] readdata
     );
@@ -25,11 +25,13 @@ output[7:0] readdata
     
     wire trigger;
     assign trigger = ~Uart_state_trigger;
+    assign Op_send_trigger = ~send_trigger
     
+
     initial begin recv_state_reg = 1'b0; send_state_reg = 1'b1; end
     
-    always @(posedge trigger or posedge send_finish)
-        begin if(Uart_state_trigger == 1'b0 && send_finish == 1'b0) send_state_reg <= 1'b0;
+    always @(posedge Op_send_trigger or posedge send_finish)
+        begin if(send_trigger == 1'b0 && send_finish == 1'b0) send_state_reg <= 1'b0;
         else send_state_reg <= 1'b1;
         end
     
@@ -39,6 +41,6 @@ output[7:0] readdata
         end
     
     UARTReceiver recv(sysclk,UART_RX,recv_enable,recv_finish,readdata);
-    UARTSender send(sysclk,writedata,send_trigger,send_enable,send_work_state,send_finish,UART_TX);
+    UARTSender send(sysclk,writedata,Op_send_trigger,send_enable,send_work_state,send_finish,UART_TX);
     
 endmodule

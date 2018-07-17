@@ -42,6 +42,10 @@ integer i;
     else Uart_state_trigger = 1'b0;
 
     always@ (*)
+    if(write_enable && address == 32'h40000018) Uart_send_trigger = 1'b1;
+    else Uart_send_trigger = 1'b0;
+
+    always@ (*)
     if(read_enable) begin
             case(address)   
                 32'h4000001C : tmp = {24'b0,UartReadData};
@@ -315,9 +319,8 @@ integer i;
         memory[i] <= 32'h00000000;
     else begin 
         if(write_enable) begin
-            if(Uart_send_trigger == 1'b1) Uart_send_trigger = 1'b0;
             case(address)
-                32'h40000018 : begin UartWriteData <= writedata[7:0]; Uart_send_trigger <= 1'b1; end
+                32'h40000018 : UartWriteData <= writedata[7:0];
                 32'h40000014 : tubereg <= writedata[17:0];
                 32'h4000000C : ledreg <= writedata[7:0];
                 32'h40000000 : timer_TH <= writedata;
