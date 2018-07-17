@@ -19,7 +19,9 @@ module CPU_P(sys_clk, reset, UART_TX, UART_RX, LED, TUBE );
 	wire [31:0] PC4;
 	wire [31:0] Instruction;
 	wire [2:0] PCSrc0,PCSrc;
-	wire Branch,Stall;
+	wire Branch;
+	reg  Stall;
+	initial Stall<=1'b0;
 	wire [31:0] BranchAddr,JumpAddr,JrAddr;
 	
 	InstructionMemory instructionmemory(.Address(PC),.Instruction(Instruction));
@@ -114,7 +116,12 @@ module CPU_P(sys_clk, reset, UART_TX, UART_RX, LED, TUBE );
 	RegisterFile regfile(.reset(reset),.clk(clk),.RegWrite(RegWrite_WB),.Read_register1(RsAddr),.Read_register2(RtAddr),.Write_register(RegWrAddr_WB),.Write_data(RegWrData),
 						.Read_data1(RsData),.Read_data2(RtData));
 	
-	assign Stall=((RegWrAddr_EX==RsAddr)||(RegWrAddr_EX==RtAddr))&&MemRead_EX;		//IRQ PC31?
+	always @(posedge clk)
+	begin
+		if(Stall)Stall<=1'b0;
+		else if(((RegWrAddr_EX==RsAddr)||(RegWrAddr_EX==RtAddr))&&MemRead_EX)Stall<=1'b1;
+	end
+	//assign Stall=((RegWrAddr_EX==RsAddr)||(RegWrAddr_EX==RtAddr))&&MemRead_EX;		//IRQ PC31?
 	
 	wire [31:0] Imm32;
 	assign Imm32 = LUOp?{Imm16,16'b0}:
@@ -128,6 +135,7 @@ module CPU_P(sys_clk, reset, UART_TX, UART_RX, LED, TUBE );
 	reg [1:0]MemtoReg_EX;
 	reg RegWrite_EX,MemWrite_EX,ALUSrc1_EX,ALUSrc2_EX,Sign_EX,BranchType_EX;
 	reg [5:0]ALUFun_EX;
+	reg OpCode_EX;
 	
 	always@(posedge reset or posedge clk)
 	begin
@@ -140,7 +148,8 @@ module CPU_P(sys_clk, reset, UART_TX, UART_RX, LED, TUBE );
 		RsAddr_EX <= 0;
 		RtAddr_EX <= 0;
 		RdAddr_EX <= 0;
-		RegWrAddr_EX <= 0;
+		//RegWrAddr_EX <= 0;
+		RegWrAddr_EX <= 5'b00000;
 		MemtoReg_EX <= 0;
 		RegWrite_EX <= 0;
 		MemRead_EX <= 0;
@@ -161,7 +170,8 @@ module CPU_P(sys_clk, reset, UART_TX, UART_RX, LED, TUBE );
 		RsAddr_EX <= RsAddr;
 		RtAddr_EX <= RtAddr;
 		RdAddr_EX <= RdAddr;
-		RegWrAddr_EX <= RegDst;
+		//RegWrAddr_EX <= RegDst;
+		RegWrAddr_EX <= RegWrAddr;
 		MemtoReg_EX <= MemtoReg;
 		RegWrite_EX <= RegWrite;
 		MemRead_EX <= MemRead;
@@ -172,6 +182,7 @@ module CPU_P(sys_clk, reset, UART_TX, UART_RX, LED, TUBE );
 		ALUFun_EX <= ALUFun;
 		BranchType_EX <= BranchType;
 		PC4_EX <= (IRQ&&~PC_ID[31])?(PC4_ID-4):PC4_ID;
+		OpCode_EX<=Instruction_ID[31:26];
 		end
 	end
 
@@ -181,12 +192,13 @@ module CPU_P(sys_clk, reset, UART_TX, UART_RX, LED, TUBE );
 	wire [31:0] ALUB;
 	wire [31:0] ALUOUT;
 	wire [1:0] ForwardA,ForwardB;
+	wire MemData;
 	reg RegWrite_MEM;
 	reg [4:0]RegWrAddr_MEM;
 	reg [31:0]ALUOUT_MEM;
 	
-	Forwarding(.RegWrite_MEM(RegWrite_MEM),.RegWrAddr_MEM(RegWrAddr_MEM),.RsAddr_EX(RsAddr_EX),.RtAddr_EX(RtAddr_EX),.RegWrite_WB(RegWrite_WB),.RegWrAddr_WB(RegWrAddr_WB),
-				.ForwardA(ForwardA),.ForwardB(ForwardB));
+	Forwarding forwarding(.OpCode_EX(OpCode_EX),.MemWrite_Ex(MemWrite_EX),.RegWrite_MEM(RegWrite_MEM),.RegWrAddr_MEM(RegWrAddr_MEM),.RsAddr_EX(RsAddr_EX),.RtAddr_EX(RtAddr_EX),.RegWrite_WB(RegWrite_WB),.RegWrAddr_WB(RegWrAddr_WB),
+				.ForwardA(ForwardA),.ForwardB(ForwardB),.MemData(MemData));
 				
 	assign ALUA = ALUSrc1_EX?{27'b0,Shamt_EX}:
 				(ForwardA==2'b10)?ALUOUT_MEM:
@@ -219,8 +231,9 @@ module CPU_P(sys_clk, reset, UART_TX, UART_RX, LED, TUBE );
 		end
 	else 
 		begin
-		RegWrAddr_MEM <= RegWrAddr;
-		MemWrData_MEM <= RtData_EX;
+		//RegWrAddr_MEM <= RegWrAddr;
+		RegWrAddr_MEM <= RegWrAddr_EX;
+		MemWrData_MEM <= MemData?ALUOUT_MEM:RtData_EX;
 		ALUOUT_MEM <= ALUOUT;
 		MemtoReg_MEM <= MemtoReg_EX;
 		RegWrite_MEM <= RegWrite_EX;

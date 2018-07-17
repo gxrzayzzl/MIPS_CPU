@@ -36,6 +36,6 @@ module CPU_tb();
 		#366666 UART_RX=1;
 	end
 	
-	CPU cpu(.sys_clk(sys_clk),.reset(reset),.UART_RX(UART_RX),.UART_TX(UART_TX),.LED(LED),.TUBE(TUBE));
+	CPU_P cpu(.sys_clk(sys_clk),.reset(reset),.UART_RX(UART_RX),.UART_TX(UART_TX),.LED(LED),.TUBE(TUBE));
 	
 endmodule

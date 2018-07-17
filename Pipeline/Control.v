@@ -24,8 +24,8 @@ module Control(OpCode, Funct, IRQ, PC_31,
 	output JumpType;
 	
 	assign PCSrc=(IRQ&&~PC_31)?3'b100:
-		((OpCode==6'h00&&(Funct==6'h00||(Funct>=6'h20&&Funct<=6'h27)||Funct==6'h2a||Funct==6'h02||Funct==6'h03))||
-		(OpCode==6'h23||OpCode==6'h2b||OpCode==6'h08||OpCode==6'h09||OpCode==6'h0a||OpCode==6'h0b||OpCode==6'h0c||OpCode==6'h0f))?3'b000:
+		(((OpCode==6'h00&&(Funct==6'h00||(Funct>=6'h20&&Funct<=6'h27)||Funct==6'h2a||Funct==6'h02||Funct==6'h03))||
+		(OpCode==6'h23||OpCode==6'h2b||OpCode==6'h08||OpCode==6'h09||OpCode==6'h0a||OpCode==6'h0b||OpCode==6'h0c||OpCode==6'h0f))||OpCode==6'hb||OpCode==6'h2b)?3'b000:
 		(OpCode==6'h01||(OpCode>=6'h04&&OpCode<=6'h07))?3'b000:						//fix this(different branching logic from single-period)
 		(OpCode==6'h02||OpCode==6'h03)?3'b010:
 		(OpCode==6'h00&&(Funct==6'h08||Funct==6'h09))?3'b011:3'b101;
