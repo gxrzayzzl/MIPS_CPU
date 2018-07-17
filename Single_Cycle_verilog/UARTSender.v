@@ -43,13 +43,14 @@ output UART_TX
     begin
     if(trigger_reg == 1'b1) trigger_reg = 1'b0;
     if(pos_trigger != trigger)
-    begin
-        pos_trigger = trigger;
-        trigger_reg = 1'b1;
+        begin
+            pos_trigger = trigger;
+            trigger_reg = 1'b1;
+        end
     end
 
     reg trigger_beuse;
-    initail trigger_beuse = 1'b1;
+    initial trigger_beuse = 1'b1;
     always@(posedge trigger_reg) trigger_beuse = ~trigger_beuse;
 
     BaudGenerator baud(sysclk,enable,trigger_beuse,finish,status,budclk);
