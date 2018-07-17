@@ -37,11 +37,21 @@ output UART_TX
     reg trigger_reg;
     initial trigger_reg = 1'b1;
     
-    always@ (edge trigger)
-    begin if(trigger == 1'b0) trigger_reg <= 1'b0;
-    else trigger_reg <= 1'b1; 
+    reg pos_trigger;
+    initial pos_trigger = 1'b0;
+    always @(posedge sysclk)
+    begin
+    if(trigger_reg == 1'b1) trigger_reg = 1'b0;
+    if(pos_trigger != trigger)
+    begin
+        pos_trigger = trigger;
+        trigger_reg = 1'b1;
     end
 
-    BaudGenerator baud(sysclk,enable,trigger_reg,finish,status,budclk);
+    reg trigger_beuse;
+    initail trigger_beuse = 1'b1;
+    always@(posedge trigger_reg) trigger_beuse = ~trigger_beuse;
+
+    BaudGenerator baud(sysclk,enable,trigger_beuse,finish,status,budclk);
     
 endmodule
