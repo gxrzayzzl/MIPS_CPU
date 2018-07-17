@@ -10,7 +10,7 @@ input send_enable,
 input send_trigger,
 output wire send_work_state,
 output recv_state,
-output wire send_state,
+output send_state,
 output UART_TX,
 output[7:0] readdata
     );
@@ -31,12 +31,12 @@ output[7:0] readdata
     initial begin recv_state_reg = 1'b0; send_state_reg = 1'b1; end
     
     always @(posedge Op_send_trigger or posedge send_finish)
-        begin if(send_trigger == 1'b0 && send_finish == 1'b0) send_state_reg <= 1'b0;
+        begin if(Op_send_trigger == 1'b1 && send_finish == 1'b0) send_state_reg <= 1'b0;
         else send_state_reg <= 1'b1;
         end
     
     always @(posedge trigger or posedge recv_finish)
-        begin if(Uart_state_trigger == 1'b0 && recv_finish == 1'b0) recv_state_reg <= 1'b0;
+        begin if(trigger == 1'b1 && recv_finish == 1'b0) recv_state_reg <= 1'b0;
         else recv_state_reg <= 1'b1;
         end
     
