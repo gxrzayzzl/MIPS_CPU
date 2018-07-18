@@ -21,6 +21,7 @@ module CPU_P(sys_clk, reset, UART_TX, UART_RX, LED, TUBE );
 	wire [2:0] PCSrc0,PCSrc;
 	wire Branch;
 	reg  Stall;
+	wire if_continue;
 	initial Stall<=1'b0;
 	wire [31:0] BranchAddr,JumpAddr,JrAddr;
 	
@@ -45,7 +46,7 @@ module CPU_P(sys_clk, reset, UART_TX, UART_RX, LED, TUBE );
 	begin
 	if (reset)
 		PC <= START;
-	else if(~Stall)
+	else if((~Stall)&&(if_continue))
 		PC <= PC_next;
 	end
 		
@@ -61,7 +62,7 @@ module CPU_P(sys_clk, reset, UART_TX, UART_RX, LED, TUBE );
 		PC_ID <= 0;
 		Instruction_ID <= 0;
 		end
-	else if(~Stall)
+	else if((~Stall)&&(if_continue))
 		begin
 		PC4_ID <= PC4;
 		PC_ID <= PC;
@@ -161,7 +162,7 @@ module CPU_P(sys_clk, reset, UART_TX, UART_RX, LED, TUBE );
 		BranchType_EX <= 0;
 		PC4_EX <= 0;
 		end
-	else if(~Stall)
+	else if((~Stall)&&(if_continue))
 		begin
 		Imm32_EX <= Imm32;
 		RsData_EX <= RsData;
@@ -247,7 +248,7 @@ module CPU_P(sys_clk, reset, UART_TX, UART_RX, LED, TUBE );
 //	MEM	######################################################################
 	wire [7:0]switch;
 	wire [31:0]MemRdData;
-	wire if_continue;
+	
 	DataMemory datamemory(.reset(reset),.sysclk(sys_clk),.clk(clk),.Uart_Rx(UART_RX),.read_enable(MemRead_MEM),
 						.write_enable(MemWrite_MEM),.address(ALUOUT_MEM),.writedata(MemWrData_MEM),.switch(switch),
 						.led(LED),.tube(TUBE),.Uart_Tx(UART_TX),.readdata(MemRdData),.if_continue(if_continue));
