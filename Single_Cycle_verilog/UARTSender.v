@@ -34,24 +34,20 @@ output UART_TX
                 count = count + 4'b0001;
     end
     reg trigger_reg;
-    initial trigger_reg = 1'b1;
+    initial trigger_reg = 1'b0;
     
     reg pos_trigger;
     initial pos_trigger = 1'b0;
     always @(posedge sysclk)
     begin
     if(trigger_reg == 1'b1) trigger_reg = 1'b0;
-    if(pos_trigger != trigger)
-        begin
-            pos_trigger = trigger;
-            trigger_reg = 1'b1;
-        end
+    else if(pos_trigger != trigger)
+            begin
+                pos_trigger = trigger;
+                if(pos_trigger == 1'b1) trigger_reg = 1'b1;
+            end
     end
 
-    reg trigger_beuse;
-    initial trigger_beuse = 1'b1;
-    always@(posedge trigger_reg) trigger_beuse = ~trigger_beuse;
-
-    BaudGenerator baud(1'b1,sysclk,enable,trigger_beuse,finish,status,budclk);
+    BaudGenerator baud(1'b1,sysclk,enable,trigger_reg,finish,status,budclk);
     
 endmodule

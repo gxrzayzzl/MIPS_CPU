@@ -21,7 +21,7 @@ assign readdata = tmp;
 reg[17:0] tubereg;
 assign tube = tubereg;
 reg[7:0] ledreg;
-assign led = ledreg;
+//assign led = ledreg;
 reg[7:0] UartWriteData;
 wire[7:0] UartReadData;
 
@@ -48,11 +48,11 @@ integer i;
     always@ (*)
     if(read_enable) begin
             case(address)   
-                32'h4000001C : tmp = {24'b0,UartReadData};
-                32'h40000010 : tmp = {24'b0,switch};
-                32'h40000020 : tmp = {27'b0,Uart_CON_R,Uart_CON_W};
-                32'h40000008 : tmp = {29'b0,timer_CON_R,timer_CON_W};
-                32'h40000004 : tmp = timer_TL;
+                32'h4000001C : tmp <= {24'b0,UartReadData};
+                32'h40000010 : tmp <= {24'b0,switch};
+                32'h40000020 : tmp <= {27'b0,Uart_CON_R,Uart_CON_W};
+                32'h40000008 : tmp <= {29'b0,timer_CON_R,timer_CON_W};
+                32'h40000004 : tmp <= timer_TL;
                 32'd1024 :tmp = {11'b0,21'b011111101111110111111};
                 32'd1028 :tmp = {11'b0,21'b011111101111110000110};
                 32'd1032 :tmp = {11'b0,21'b011111101111111011011};
@@ -313,12 +313,25 @@ integer i;
             endcase end
             else tmp = 32'b0;
 
+    reg[1:0] Uart_Test_Reg;
+    initial Uart_Test_Reg = 2'b0;
+
+    always@(posedge Uart_state_trigger) Uart_Test_Reg[0] = 1'b1;
+    always@(posedge Uart_send_trigger) Uart_Test_Reg[1] = 1'b1;
+
+    assign led[7] = Uart_Tx;
+    assign led[6] = ~Uart_send_trigger;
+    assign led[5] = ~Uart_state_trigger;
+    assign led[4:2] = Uart_CON_R;
+    assign led[1:0] = Uart_CON_W;
+
+    initial Uart_CON_W = 2'b11;
+
     always@ (posedge reset or posedge clk)
     if(reset)
     begin
         for (i = 0; i < 256; i = i + 1) memory[i] <= 32'h00000000;
         tubereg <= {18'b11_1111_1111_1111_1111};
-        ledreg <= UartReadData;
         end
     else begin 
         if(write_enable) begin

@@ -9,6 +9,7 @@ module CPU_tb();
 	wire UART_TX;
 	wire [7:0] LED;
 	wire [17:0] TUBE;
+	wire [7:0] TEST_LED;
 	
 	initial
 	begin
@@ -36,6 +37,6 @@ module CPU_tb();
 		#366666 UART_RX=1;
 	end
 	
-	CPU cpu(.sys_clk(sys_clk),.reset(reset),.UART_RX(UART_RX),.UART_TX(UART_TX),.LED(LED),.TUBE(TUBE));
+	CPU cpu(.sys_clk(sys_clk),.reset(reset),.UART_RX(UART_RX),.UART_TX(UART_TX),.LED(LED),.TUBE(TUBE),.TEST_LED(TEST_LED));
 	
 endmodule

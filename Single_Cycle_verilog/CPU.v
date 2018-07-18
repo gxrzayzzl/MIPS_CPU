@@ -21,12 +21,13 @@
 
 
 module CPU(
-sys_clk,reset,UART_RX,UART_TX,LED,TUBE
+sys_clk,reset,UART_RX,UART_TX,LED,TUBE,TEST_LED
     );
 	input sys_clk,reset,UART_RX;
 	output UART_TX;
 	output [7:0] LED;
 	output [17:0] TUBE;
+	output wire [7:0] TEST_LED;
 	wire [7:0] switch;
 	// This is for temp
 	reg [7:0] switch_reg;
@@ -40,6 +41,7 @@ sys_clk,reset,UART_RX,UART_TX,LED,TUBE
 	wire clk;
 	wire buad;
 	reg [31:0] PC;
+	assign TEST_LED = PC[9:2];
 	reg [31:0] PC_next;
 	
 	divide div(sys_clk,clk);
