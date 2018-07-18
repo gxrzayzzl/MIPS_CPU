@@ -21,6 +21,6 @@ output[7:0] data
         if(enable) datareg = {~UART_RX,datareg[7:1]};
     end
 
-    BaudGenerator baud(sysclk,enable,~UART_RX,finish,status,budclk);
+    BaudGenerator baud(1'b0,sysclk,enable,~UART_RX,finish,status,budclk);
     
 endmodule

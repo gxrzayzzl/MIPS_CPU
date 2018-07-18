@@ -10,11 +10,11 @@ output wire[31:0] TL
     reg[31:0] TLreg;
     assign TL = TLreg;
 	initial timer_State=1'b1;
-    
+
     always@(posedge clk)
     if(timer_CON[0] == 1'b1)
     begin
-        if(TLreg != 32'hffffffff)begin
+        if(TLreg != 32'h00010000)begin
 			timer_State = 1'b0;
             TLreg = TLreg + 32'b1;end
         else
