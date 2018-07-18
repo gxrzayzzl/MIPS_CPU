@@ -214,7 +214,8 @@ module CPU_P(sys_clk, reset, UART_TX, UART_RX, LED, TUBE );
 	
 //	EX/MEM	######################################################################
 	reg [31:0]MemWrData_MEM,PC4_MEM;
-	reg MemtoReg_MEM,MemRead_MEM,MemWrite_MEM;
+	reg MemRead_MEM,MemWrite_MEM;
+	reg [1:0]MemtoReg_MEM;
 	
 	always@(posedge reset or posedge clk)
 	begin
@@ -253,7 +254,7 @@ module CPU_P(sys_clk, reset, UART_TX, UART_RX, LED, TUBE );
 	
 //	MEM/WB	######################################################################
 	reg [31:0]MemRdData_WB,ALUOUT_WB,PC4_WB;
-	reg MemtoReg_WB;
+	reg [1:0]MemtoReg_WB;
 	
 	always@(posedge reset or posedge clk)
 	begin
