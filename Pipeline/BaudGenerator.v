@@ -1,5 +1,4 @@
 module BaudGenerator(
-input type,
 input sysclk,
 input trigger,
 input enable,
@@ -37,7 +36,7 @@ output bud_clk
             begin
                 if(state == 13'b1_0100_0101_1000) 
                 begin
-                    if(count[0] == 1'b0 && (count != 5'b10010 || type == 1'b1)) tmp = 1'b1;
+                    if(count[0] == 1'b0 && count != 5'b10010) tmp = 1'b1;
                     state = 13'b0_0000_0000_0000;
                     count = count + 5'b00001;
                 end

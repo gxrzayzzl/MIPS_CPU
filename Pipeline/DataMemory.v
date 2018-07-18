@@ -335,6 +335,6 @@ integer i;
         end
     
     assign if_continue = timer_CON_R;
-    Timer timer(sysclk,timer_CON_W,timer_TH,timer_CON_R,timer_TL);
+    Timer timer(clk,timer_CON_W,timer_TH,timer_CON_R,timer_TL);
     UART Uart(sysclk,Uart_state_trigger,Uart_Rx,UartWriteData,Uart_CON_W[1],Uart_CON_W[0],Uart_send_trigger,Uart_CON_R[0],Uart_CON_R[1],Uart_CON_R[2],Uart_Tx,UartReadData);
 endmodule

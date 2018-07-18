@@ -4,7 +4,7 @@ module divide(sys_clk,clk);
 	input sys_clk;
 	reg [3:0] count;
 	output reg clk;
-	parameter gate=4'b1111;
+	parameter gate=4'b0010;
 	initial begin clk<=1'b0;count<=4'b0000;end
 	always@(posedge sys_clk)
 	begin
