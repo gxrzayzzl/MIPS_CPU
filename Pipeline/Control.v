@@ -100,11 +100,11 @@ module Control(OpCode, Funct, IRQ, PC_31,
 	always @(*)
 		case (OpCode[5:0])
 			6'b00_0000: ALUFun <= aluFunct;
-			6'b00_0001: ALUFun <= aluGTZ;
+			6'b00_0001: ALUFun <= aluLTZ;
 			6'b00_0100: ALUFun <= aluEQ;
 			6'b00_0101: ALUFun <= aluNEQ;
 			6'b00_0110: ALUFun <= aluLEZ;
-			6'b00_0111: ALUFun <= aluLTZ;
+			6'b00_0111: ALUFun <= aluGTZ;
 			6'b00_1000: ALUFun <= aluADD;
 			6'b00_1001: ALUFun <= aluADD;
 			6'b00_1010: ALUFun <= aluLT;
