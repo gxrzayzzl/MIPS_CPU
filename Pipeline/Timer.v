@@ -11,6 +11,8 @@ output wire[31:0] TL
     assign TL = TLreg;
 	initial timer_State=1'b1;
     
+    initial TH <= 32'h00010000;
+
     always@(posedge clk)
     if(timer_CON[0] == 1'b1)
     begin
