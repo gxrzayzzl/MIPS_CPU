@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
 module UARTReceiver(
+input reset,
 input sysclk,
 input UART_RX,
 input enable,
@@ -16,9 +17,10 @@ output[7:0] data
     always@(*) finish_reg = finish;
     assign state = finish_reg;
     
-    always @(posedge budclk)
+    always @(posedge budclk or posedge reset)
     begin
-        if(enable) datareg = {~UART_RX,datareg[7:1]};
+        if(reset == 1'b1) datareg <= 8'b1111_1111;
+        else if(enable) datareg <= {~UART_RX,datareg[7:1]};
     end
 
     BaudGenerator baud(1'b0,sysclk,enable,~UART_RX,finish,status,budclk);

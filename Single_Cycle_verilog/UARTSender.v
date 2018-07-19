@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
 module UARTSender(
+input reset,
 input sysclk,
 input[7:0] TX_DATA,
 input trigger,
@@ -18,10 +19,12 @@ output UART_TX
     initial tmp = 1'b1; 
     initial count = 4'b0000;
 
-    always @(posedge budclk)
+    always @(posedge budclk or posedge reset)
     begin
-        if(count == 4'b1010) count <= 4'b0000;
-        tmp = (count == 4'b0000)?1'b0:
+        if(reset == 1'b1) begin count <= 4'b0000; end
+        else begin
+            if(count == 4'b1010) count <= 4'b0000;
+            tmp = (count == 4'b0000)?1'b0:
                 (count == 4'b0001)?TX_DATA[0]:
                 (count == 4'b0010)?TX_DATA[1]:
                 (count == 4'b0011)?TX_DATA[2]:
@@ -32,6 +35,7 @@ output UART_TX
                 (count == 4'b1000)?TX_DATA[7]:
                 (count == 4'b1001)?1'b1:1'b1;
                 count = count + 4'b0001;
+        end
     end
     reg trigger_reg;
     initial trigger_reg = 1'b0;
