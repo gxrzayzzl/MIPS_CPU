@@ -1,10 +1,11 @@
-module CPU_P(sys_clk, reset, UART_TX, UART_RX, LED, TUBE );
+module CPU_P(sys_clk, reset, UART_TX, UART_RX, LED, TUBE);//,TEST_LED );
     input sys_clk;
     input reset;
     input UART_RX;
     output UART_TX;
     output [7:0] LED;
-    output [17:0] TUBE;
+    output [21:0] TUBE;
+    //output [7:0] TEST_LED;
         
 	parameter ILLOP=32'h80000004;
 	parameter XADR=32'h80000008;
@@ -49,6 +50,8 @@ module CPU_P(sys_clk, reset, UART_TX, UART_RX, LED, TUBE );
 	else if((~Stall)&&(if_continue))
 		PC <= PC_next;
 	end
+	
+	//assign TEST_LED = PC[9:2];
 		
 //	IF/ID	##################################################################
 	reg [31:0]PC4_ID,Instruction_ID,PC_ID;
@@ -56,12 +59,18 @@ module CPU_P(sys_clk, reset, UART_TX, UART_RX, LED, TUBE );
 	
 	always@(posedge reset or posedge clk)
 	begin
-	if (reset||IF_Flush)
+	if (reset)
 		begin
 		PC4_ID <= 0;
 		PC_ID <= 0;
-		Instruction_ID <= 0;
+		Instruction_ID <= 32'b0;
 		end
+    else if(IF_Flush)
+        begin
+        PC4_ID <= 0;
+        PC_ID <= 0;
+        Instruction_ID <= 32'b0;
+        end
 	else if((~Stall)&&(if_continue))
 		begin
 		PC4_ID <= PC4;
@@ -129,6 +138,9 @@ module CPU_P(sys_clk, reset, UART_TX, UART_RX, LED, TUBE );
 					ExtOp?{{16{Imm16[15]}},Imm16}:{16'b0,Imm16};
 	assign JumpAddr = {PC4_ID[31:28],Instruction_ID[25:0],2'b00};
 	assign JrAddr = RsData;
+	/*wire signal;
+	assign signal = reset||IF_Flush;
+	assign LED = {signal,PCSrc[1:0],IF_Flush,Instruction_ID[3:0]};*/
 	
 //	ID/EX	######################################################################
 	reg [31:0]Imm32_EX,RsData_EX,RtData_EX,PC4_EX;

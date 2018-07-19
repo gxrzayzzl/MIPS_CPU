@@ -48,5 +48,5 @@ set_property -dict {PACKAGE_PIN H5 IOSTANDARD LVCMOS33} [get_ports {LED[5]}]
 set_property -dict {PACKAGE_PIN H6 IOSTANDARD LVCMOS33} [get_ports {LED[6]}]
 set_property -dict {PACKAGE_PIN K1 IOSTANDARD LVCMOS33} [get_ports {LED[7]}]
 
-#create_clock -period 10.000 -name sysclk -waveform {0.000 5.000} [get_ports sys_clk]
+create_clock -period 10.000 -name sysclk -waveform {0.000 5.000} [get_ports sys_clk]
 #set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets sysclk]

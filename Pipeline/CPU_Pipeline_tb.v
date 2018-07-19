@@ -8,7 +8,7 @@ module CPU_tb();
 	reg UART_RX;
 	wire UART_TX;
 	wire [7:0] LED;
-	wire [17:0] TUBE;
+	wire [21:0] TUBE;
 	
 	initial
 	begin

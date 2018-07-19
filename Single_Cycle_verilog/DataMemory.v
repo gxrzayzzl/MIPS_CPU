@@ -331,7 +331,8 @@ integer i;
     if(reset)
     begin
         for (i = 0; i < 256; i = i + 1) memory[i] <= 32'h00000000;
-        tubereg <= {18'b11_1111_1111_1111_1111};
+        tubereg <= {18'b11_1111_1000_0111_1111};
+        ledreg <= 8'b0000_0000;
         end
     else begin 
         if(write_enable) begin
