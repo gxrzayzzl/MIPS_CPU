@@ -35,7 +35,7 @@ output bud_clk
             if(tmp == 1'b1) tmp = ~tmp;
             if(count != 5'b10100)
             begin
-                if(state == 13'b1_0100_0101_1000) 
+                if(state == 13'b1001111101110) 
                 begin
                     if(count[0] == 1'b0 && (count != 5'b10010 || type == 1'b1)) tmp = 1'b1;
                     state = 13'b0_0000_0000_0000;

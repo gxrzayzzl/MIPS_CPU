@@ -9,7 +9,7 @@ input[31:0] address,
 input[31:0] writedata,
 input[7:0] switch,
 output[7:0] led,
-output[17:0] tube,
+output[21:0] tube,
 output wire Uart_Tx,
 output wire[31:0] readdata,
 output if_continue
@@ -19,9 +19,9 @@ reg[31:0] memory[255:0];
 reg[31:0] tmp;
 assign readdata = tmp;
 reg[17:0] tubereg;
-assign tube = tubereg;
+assign tube = {tubereg[10:7],tubereg};
 reg[7:0] ledreg;
-//assign led = ledreg;
+assign led = ledreg;
 reg[7:0] UartWriteData;
 wire[7:0] UartReadData;
 
@@ -319,11 +319,11 @@ integer i;
     always@(posedge Uart_state_trigger) Uart_Test_Reg[0] = 1'b1;
     always@(posedge Uart_send_trigger) Uart_Test_Reg[1] = 1'b1;
 
-    assign led[7] = Uart_Tx;
+    /*assign led[7] = Uart_Tx;
     assign led[6] = ~Uart_send_trigger;
     assign led[5] = ~Uart_state_trigger;
     assign led[4:2] = Uart_CON_R;
-    assign led[1:0] = Uart_CON_W;
+    assign led[1:0] = Uart_CON_W;*/
 
     initial Uart_CON_W = 2'b11;
 
